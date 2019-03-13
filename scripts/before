@@ -1,4 +1,2 @@
 #!/bin/bash
-pwd
 docker pull angelfym/springboot-application-ci:latest
-docker-compose down
