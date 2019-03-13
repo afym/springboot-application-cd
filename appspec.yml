@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /docker-compose.yml
-    destination: /tmp/
+  - source: config/docker-compose.yml
+    destination: /tmp
 hooks:
   BeforeInstall:
     - location: scripts/before
