@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /docker-compose.yml
+    destination: /app
+hooks:
+  BeforeInstall:
+    - location: scripts/start_app
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_app
+      timeout: 300
+      runas: root
