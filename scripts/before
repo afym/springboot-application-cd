@@ -1,2 +1,4 @@
 #!/bin/bash
+echo "begin" >> /tmp/before.log
 docker pull angelfym/springboot-application-ci:latest
+echo "end" >> /tmp/before.log

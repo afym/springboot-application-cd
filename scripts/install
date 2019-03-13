@@ -1,3 +1,5 @@
 #!/bin/bash
+echo "begin" >> /tmp/install.log
 docker rm -f app
 docker run -d --name app -p 80:8080 angelfym/springboot-application-ci:latest
+echo "end" >> /tmp/install.log
