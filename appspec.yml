@@ -5,7 +5,3 @@ hooks:
     - location: scripts/before
       timeout: 300
       runas: root
-  Install:
-    - location: scripts/install
-      timeout: 300
-      runas: root

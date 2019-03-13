@@ -2,3 +2,17 @@
 echo "begin" >> /tmp/before.log
 docker pull angelfym/springboot-application-ci:latest
 echo "end" >> /tmp/before.log
+
+echo "begin" >> /tmp/install.log
+
+CONTAINER_NAME=app
+COUNT=$(docker ps -a | grep "${CONTAINER_NAME}" | wc -l)
+
+if (($COUNT > 0)); then
+    echo "cleaning container" >> /tmp/install.log
+    docker rm -f ${CONTAINER_NAME}
+fi
+
+docker run -d --name ${CONTAINER_NAME} -p 80:8080 angelfym/springboot-application-ci:latest
+
+echo "end" >> /tmp/install.log
